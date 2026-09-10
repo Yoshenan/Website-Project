@@ -1,0 +1,53 @@
+name : Little-Compass CI/CD
+
+on:
+  push:
+     branches:
+        -main
+
+
+jobs:
+  
+  build:
+     name: CI - Build Docker Image
+     runs-on: self-hosted
+
+  steps:
+    - name : Checkout code
+      uses : actions/checkout@v6
+
+    - name: Build Docker image
+        run: docker build -t little-compass:${{ github.sha }} .
+
+    - name: Verify Docker image
+        run: docker image inspect little-compass:${{ github.sha }}
+
+
+deploy:
+  name: CD - Deploy Little Compass
+  needs: build
+  runs-on: self-hosted
+
+  steps:
+    - name: Checkout code
+      uses: actions/checkout@v6
+
+    - name: Stop existing container
+      shell: powershell
+      run: |
+        $container = docker ps -aq -f "name=^little-compass$"
+        if ($container) {
+          docker rm -f $container
+        }
+
+    - name: Build new image
+      run: docker build -t little-compass:latest .
+
+    - name: Start Little Compass
+      run: docker run -d --name little-compass -p 80:80 little-compass:latest
+
+    - name: Verify deployment
+      run: docker ps
+
+
+
