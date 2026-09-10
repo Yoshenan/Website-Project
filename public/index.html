@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Little Compass</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      .elfsight-app-a7e1506a-a4c5-4a48-b3ed-ebf6e98ce25d {
+        width: 100% !important;
+        max-width: 100% !important;
+      }
+      .elfsight-app-a7e1506a-a4c5-4a48-b3ed-ebf6e98ce25d > div {
+        width: 100% !important;
+        max-width: 100% !important;
+      }
+      .watermark-killer {
+        height: 670px;
+        overflow: hidden;
+        position: relative;
+        width: 100%;
+      }
+    </style>
+</head>
+
+<body class="bg-slate-50 text-slate-800">
+
+    <!-- Navigation Header -->
+    <header class="max-w-7xl mx-auto px-6 py-6 flex items-center">
+        <div class="flex items-center space-x-3">
+            <span class="text-slate-900 font-semibold">Little Compass</span>
+        </div>
+        <nav class="hidden text-sm md:flex items-center space-x-8 font-medium ml-auto">
+            <a href="#about" class="hover:text-blue-600 transition">About</a>
+            <a href="contact.html" class="hover:text-blue-600 transition">Contact</a>
+            <a href="#programme" class="hover:text-blue-600 transition">Programme</a>
+            <a href="#research" class="hover:text-blue-600 transition">Research</a>
+            <a href="gallery.html" class="hover:text-blue-600 transition">Gallery</a>
+        </nav>
+    </header>
+
+    <!-- Main Hero Section -->
+    <section class="max-w-7xl mx-auto px-6 pt-4 pb-12 md:pt-6 md:pb-20">
+        
+        <!-- 12-Column Grid Container -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            <!-- Left Column: Text Content -->
+            <div class="lg:col-span-6 space-y-6">
+                <h1 class="text-4xl md:text-5xl font-bold text-slate-900 tracking-tight leading-tight">
+                    Empowering students in<br>finding their path
+                </h1>
+
+                <p class="text-base text-slate-600 max-w-xl leading-relaxed">
+                    Sparking a lifelong love of learning,<br>
+                    giving every child the space they need,<br>
+                    to chase and conquer their own goals.
+                </p>
+
+                <a href="Brown Minimalist Classic Professional Photography Brochure.pdf" target="_blank" class="w-1/2 py-3.5 px-5 bg-sky-600 hover:bg-sky-900 text-white font-semibold rounded-xl shadow-sm transition flex items-center justify-center space-x-3 text-sm">
+                    <span>Download Brochure</span>
+                </a> 
+            </div>
+
+            <!-- Right Column: Interactive Tree Section -->
+            <div class="lg:col-span-6 relative h-[420px] w-full flex items-center justify-center">
+                <div class="relative w-full h-full border border-dashed border-slate-300 rounded-2xl overflow-hidden flex items-center justify-center bg-white/50">
+                    
+                    <img src="tree.jpg" class="h-full w-auto object-contain mx-auto" alt="Growth Tree" />
+
+                    <!-- Node Buttons -->
+                    <button data-info="roots" class="absolute top-[88%] left-[52%] -translate-x-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-emerald-500 border-2 border-white shadow-lg hover:scale-125 focus:scale-125 transition-all duration-300 animate-pulse"></button>
+                    <button data-info="trunk" class="absolute top-[62%] left-[51%] -translate-x-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-red-500 border-2 border-white shadow-lg hover:scale-125 focus:scale-125 transition-all duration-300 animate-pulse"></button>
+                    <button data-info="branch" class="absolute top-[48%] left-[60%] -translate-x-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-pink-500 border-2 border-white shadow-lg hover:scale-125 focus:scale-125 transition-all duration-300 animate-pulse"></button>
+                    <button data-info="leaves" class="absolute top-[18%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-orange-500 border-2 border-white shadow-lg hover:scale-125 focus:scale-125 transition-all duration-300 animate-pulse"></button>
+
+                </div>
+            </div>
+
+            <!-- Elfsight Widget Container -->
+            <div class="w-full col-span-full watermark-killer">
+                <script src="https://elfsightcdn.com/platform.js" async></script>
+                <div class="elfsight-app-a7e1506a-a4c5-4a48-b3ed-ebf6e98ce25d" data-elfsight-app-lazy></div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Modal Backdrop & Card -->
+    <div id="modal-backdrop" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300">
+        <div id="modal-card" class="relative w-full max-w-md p-6 bg-white rounded-2xl shadow-2xl transform scale-95 transition-transform duration-300">
+            <button id="modal-cls-btn" type="button" class="absolute top-4 right-4 text-gray-400 hover:text-gray-700 text-2xl font-bold leading-none transition-colors cursor-pointer">
+                &times;
+            </button>
+            <div class="mb-4 pr-4">
+                <h3 id="modal-title" class="text-xl font-bold text-gray-800"></h3>
+            </div>
+            <div id="modal-body" class="text-sm text-gray-600 leading-relaxed space-y-2"></div>
+        </div>
+    </div>
+
+    <!-- JavaScript Bundle -->
+    <script src="../dist/func.js"></script>
+</body>
+</html>
